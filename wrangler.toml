@@ -1,0 +1,25 @@
+# AJ Sports — Videos API (Cloudflare Worker)
+# نام باید دقیقاً با نام ورکر موجود در داشبورد یکی باشد (آدرس: videos.applicationtest1000tv.workers.dev)
+name = "videos"
+main = "worker.js"
+compatibility_date = "2025-06-01"
+workers_dev = true
+
+# مهم: متغیرهای تنظیم‌شده در داشبورد (مثل ADMIN_TOKEN اگر از نوع Variable باشد) با دیپلوی از گیت پاک نشوند
+keep_vars = true
+
+# KV: فقط مقدار id را عوض کنید
+# داشبورد ← Storage & Databases ← KV ← namespace با نام «video» ← کپی «Namespace ID»
+[[kv_namespaces]]
+binding = "VIDEOS"
+id = "PUT_KV_NAMESPACE_ID_HERE"
+
+[observability]
+enabled = true
+
+# اختیاری: مقصد لینک‌های اشتراک (پیش‌فرض داخل کد همین است)
+# [vars]
+# SITE_ORIGIN = "https://ajsports.dpdns.org"
+
+# ⚠️ ADMIN_TOKEN را داخل این فایل ننویسید (عمومی می‌شود).
+# داشبورد ← Worker ← Settings ← Variables and Secrets ← Add ← نوع Secret ← نام: ADMIN_TOKEN
