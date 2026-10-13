@@ -12,7 +12,7 @@ keep_vars = true
 # داشبورد ← Storage & Databases ← KV ← namespace با نام «video» ← کپی «Namespace ID»
 [[kv_namespaces]]
 binding = "VIDEOS"
-id = "PUT_KV_NAMESPACE_ID_HERE"
+id = "c15120c2f3f346a0aaafd644519a3258"
 
 [observability]
 enabled = true
